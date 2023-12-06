@@ -1,11 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Text, TextInput, View} from 'react-native';
+import { Text, TextInput, View } from 'react-native';
 
 const Cat = () => {
+  const name = '喵喵';
   return (
     <View>
-      <Text>Hello, I am...</Text>
+      <Text>Hello, I am...{name}</Text>
       <TextInput
         style={{
           height: 40,
