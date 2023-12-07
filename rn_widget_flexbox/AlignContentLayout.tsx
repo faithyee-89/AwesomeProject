@@ -1,23 +1,42 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
-const DirectionLayout = () => {
-  const [direction, setDirection] = useState("ltr");
+const AlignContentLayout = () => {
+  const [alignContent, setAlignContent] = useState("flex-start");
 
   return (
     <PreviewLayout
-      label="direction"
-      selectedValue={direction}
-      values={["ltr", "rtl"]}
-      setSelectedValue={setDirection}>
+      label="alignContent"
+      selectedValue={alignContent}
+      values={[
+        "flex-start",
+        "flex-end",
+        "stretch",
+        "center",
+        "space-between",
+        "space-around",
+      ]}
+      setSelectedValue={setAlignContent}>
       <View
-        style={[styles.box, { backgroundColor: "powderblue" }]}
+        style={[styles.box, { backgroundColor: "orangered" }]}
       />
       <View
-        style={[styles.box, { backgroundColor: "skyblue" }]}
+        style={[styles.box, { backgroundColor: "orange" }]}
       />
       <View
-        style={[styles.box, { backgroundColor: "steelblue" }]}
+        style={[styles.box, { backgroundColor: "mediumseagreen" }]}
+      />
+      <View
+        style={[styles.box, { backgroundColor: "deepskyblue" }]}
+      />
+      <View
+        style={[styles.box, { backgroundColor: "mediumturquoise" }]}
+      />
+      <View
+        style={[styles.box, { backgroundColor: "mediumslateblue" }]}
+      />
+      <View
+        style={[styles.box, { backgroundColor: "purple" }]}
       />
     </PreviewLayout>
   );
@@ -45,7 +64,8 @@ const PreviewLayout = ({
           <Text
             style={[
               styles.buttonLabel,
-              selectedValue === value && styles.selectedLabel,
+              selectedValue === value &&
+                styles.selectedLabel,
             ]}
           >
             {value}
@@ -53,8 +73,12 @@ const PreviewLayout = ({
         </TouchableOpacity>
       ))}
     </View>
-    <View style={[styles.container, { [label]: selectedValue }]}>
-        <Text>{selectedValue}</Text>
+    <View
+      style={[
+        styles.container,
+        { [label]: selectedValue },
+      ]}
+    >
       {children}
     </View>
   </View>
@@ -63,12 +87,14 @@ const PreviewLayout = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexWrap: "wrap",
     marginTop: 8,
     backgroundColor: "aliceblue",
+    maxHeight: 400,
   },
   box: {
     width: 50,
-    height: 50,
+    height: 80,
   },
   row: {
     flexDirection: "row",
@@ -104,4 +130,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DirectionLayout;
+export default AlignContentLayout;

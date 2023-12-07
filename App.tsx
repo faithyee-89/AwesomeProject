@@ -20,6 +20,15 @@ import PercentageDimensionsBasics from './rn_widget_style/PercentageDimensionsBa
 import Flex from './rn_widget_flexbox/FlexDemo';
 import FlexDirectionBasics from './rn_widget_flexbox/FlexDirectionBasics';
 import DirectionLayout from './rn_widget_flexbox/DirectionLayout';
+import JustifyContentBasics from './rn_widget_flexbox/JustifyContentBasics';
+import AlignItemsLayout from './rn_widget_flexbox/AlignItemsLayout';
+import AlignSelfLayout from './rn_widget_flexbox/AlignSelfLayout';
+import AlignContentLayout from './rn_widget_flexbox/AlignContentLayout';
+import FlexWrapLayout from './rn_widget_flexbox/FlexWrapLayout';
+import FlexShrink from './rn_widget_flexbox/FlexShrink';
+import RowGapAndColumnGap from './rn_widget_flexbox/RowGapAndColumnGap';
+import WidthHeightBasics from './rn_widget_flexbox/WidthHeightBasics';
+import PositionLayout from './rn_widget_flexbox/PositionLayout';
 
 
 function App(): JSX.Element {
@@ -35,7 +44,16 @@ function App(): JSX.Element {
     // <PercentageDimensionsBasics />
     // <Flex />
     // <FlexDirectionBasics />
-    <DirectionLayout />
+    // <DirectionLayout />
+    // <JustifyContentBasics />
+    // <AlignItemsLayout />
+    // <AlignSelfLayout />
+    // <AlignContentLayout />
+    // <FlexWrapLayout />
+    // <FlexShrink />
+    // <RowGapAndColumnGap />
+    // <WidthHeightBasics />
+    <PositionLayout />
   );
 }
 

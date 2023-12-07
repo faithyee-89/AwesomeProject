@@ -1,15 +1,26 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+    View,
+    TouchableOpacity,
+    Text,
+    StyleSheet,
+} from "react-native";
 
-const FlexDirectionBasics = () => {
-    const [flexDirection, setflexDirection] = useState("column");
+const AlignItemsLayout = () => {
+    const [alignItems, setAlignItems] = useState("stretch");
 
     return (
         <PreviewLayout
-            label="flexDirection"
-            values={["column", "row", "row-reverse", "column-reverse"]}
-            selectedValue={flexDirection}
-            setSelectedValue={setflexDirection}
+            label="alignItems"
+            selectedValue={alignItems}
+            values={[
+                "stretch",
+                "flex-start",
+                "flex-end",
+                "center",
+                "baseline",
+            ]}
+            setSelectedValue={setAlignItems}
         >
             <View
                 style={[styles.box, { backgroundColor: "powderblue" }]}
@@ -18,7 +29,14 @@ const FlexDirectionBasics = () => {
                 style={[styles.box, { backgroundColor: "skyblue" }]}
             />
             <View
-                style={[styles.box, { backgroundColor: "steelblue" }]}
+                style={[
+                    styles.box,
+                    {
+                        backgroundColor: "steelblue",
+                        width: "auto",
+                        minWidth: 50,
+                    },
+                ]}
             />
         </PreviewLayout>
     );
@@ -46,7 +64,8 @@ const PreviewLayout = ({
                     <Text
                         style={[
                             styles.buttonLabel,
-                            selectedValue === value && styles.selectedLabel,
+                            selectedValue === value &&
+                            styles.selectedLabel,
                         ]}
                     >
                         {value}
@@ -54,7 +73,12 @@ const PreviewLayout = ({
                 </TouchableOpacity>
             ))}
         </View>
-        <View style={[styles.container, { [label]: selectedValue }]}>
+        <View
+            style={[
+                styles.container,
+                { [label]: selectedValue },
+            ]}
+        >
             {children}
         </View>
     </View>
@@ -65,6 +89,7 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: 8,
         backgroundColor: "aliceblue",
+        minHeight: 200,
     },
     box: {
         width: 50,
@@ -104,4 +129,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default FlexDirectionBasics;
+export default AlignItemsLayout;

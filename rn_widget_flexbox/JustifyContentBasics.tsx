@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
-const FlexDirectionBasics = () => {
-    const [flexDirection, setflexDirection] = useState("column");
+const JustifyContentBasics = () => {
+    const [justifyContent, setJustifyContent] = useState("flex-start");
 
     return (
         <PreviewLayout
-            label="flexDirection"
-            values={["column", "row", "row-reverse", "column-reverse"]}
-            selectedValue={flexDirection}
-            setSelectedValue={setflexDirection}
+            label="justifyContent"
+            selectedValue={justifyContent}
+            values={[
+                "flex-start",
+                "flex-end",
+                "center",
+                "space-between",
+                "space-around",
+                "space-evenly",
+            ]}
+            setSelectedValue={setJustifyContent}
         >
             <View
                 style={[styles.box, { backgroundColor: "powderblue" }]}
@@ -38,10 +45,7 @@ const PreviewLayout = ({
                 <TouchableOpacity
                     key={value}
                     onPress={() => setSelectedValue(value)}
-                    style={[
-                        styles.button,
-                        selectedValue === value && styles.selected,
-                    ]}
+                    style={[styles.button, selectedValue === value && styles.selected]}
                 >
                     <Text
                         style={[
@@ -104,4 +108,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default FlexDirectionBasics;
+export default JustifyContentBasics;

@@ -1,23 +1,35 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
-const DirectionLayout = () => {
-  const [direction, setDirection] = useState("ltr");
+const FlexWrapLayout = () => {
+  const [flexWrap, setFlexWrap] = useState("wrap");
 
   return (
     <PreviewLayout
-      label="direction"
-      selectedValue={direction}
-      values={["ltr", "rtl"]}
-      setSelectedValue={setDirection}>
+      label="flexWrap"
+      selectedValue={flexWrap}
+      values={["wrap", "nowrap"]}
+      setSelectedValue={setFlexWrap}>
       <View
-        style={[styles.box, { backgroundColor: "powderblue" }]}
+        style={[styles.box, { backgroundColor: "orangered" }]}
       />
       <View
-        style={[styles.box, { backgroundColor: "skyblue" }]}
+        style={[styles.box, { backgroundColor: "orange" }]}
       />
       <View
-        style={[styles.box, { backgroundColor: "steelblue" }]}
+        style={[styles.box, { backgroundColor: "mediumseagreen" }]}
+      />
+      <View
+        style={[styles.box, { backgroundColor: "deepskyblue" }]}
+      />
+      <View
+        style={[styles.box, { backgroundColor: "mediumturquoise" }]}
+      />
+      <View
+        style={[styles.box, { backgroundColor: "mediumslateblue" }]}
+      />
+      <View
+        style={[styles.box, { backgroundColor: "purple" }]}
       />
     </PreviewLayout>
   );
@@ -33,7 +45,7 @@ const PreviewLayout = ({
   <View style={{ padding: 10, flex: 1 }}>
     <Text style={styles.label}>{label}</Text>
     <View style={styles.row}>
-      {values.map((value : any) => (
+      {values.map((value: any) => (
         <TouchableOpacity
           key={value}
           onPress={() => setSelectedValue(value)}
@@ -45,7 +57,8 @@ const PreviewLayout = ({
           <Text
             style={[
               styles.buttonLabel,
-              selectedValue === value && styles.selectedLabel,
+              selectedValue === value &&
+              styles.selectedLabel,
             ]}
           >
             {value}
@@ -53,8 +66,12 @@ const PreviewLayout = ({
         </TouchableOpacity>
       ))}
     </View>
-    <View style={[styles.container, { [label]: selectedValue }]}>
-        <Text>{selectedValue}</Text>
+    <View
+      style={[
+        styles.container,
+        { [label]: selectedValue },
+      ]}
+    >
       {children}
     </View>
   </View>
@@ -65,10 +82,11 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 8,
     backgroundColor: "aliceblue",
+    maxHeight: 400,
   },
   box: {
     width: 50,
-    height: 50,
+    height: 80,
   },
   row: {
     flexDirection: "row",
@@ -79,7 +97,6 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderRadius: 4,
     backgroundColor: "oldlace",
-    alignSelf: "flex-start",
     marginHorizontal: "1%",
     marginBottom: 6,
     minWidth: "48%",
@@ -104,4 +121,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DirectionLayout;
+export default FlexWrapLayout;
