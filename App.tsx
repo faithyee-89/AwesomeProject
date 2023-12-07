@@ -30,6 +30,8 @@ import RowGapAndColumnGap from './rn_widget_flexbox/RowGapAndColumnGap';
 import WidthHeightBasics from './rn_widget_flexbox/WidthHeightBasics';
 import PositionLayout from './rn_widget_flexbox/PositionLayout';
 import ImageView from './rn_widget_image/ImageView';
+import ButtonBasics from './rn_interaction/ButtonBasics';
+import Touchables from './rn_interaction/Touchables';
 
 
 function App(): JSX.Element {
@@ -55,7 +57,9 @@ function App(): JSX.Element {
     // <RowGapAndColumnGap />
     // <WidthHeightBasics />
     // <PositionLayout />
-    <ImageView />
+    // <ImageView />
+    // <ButtonBasics />
+    <Touchables />
   );
 }
 
