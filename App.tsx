@@ -32,6 +32,7 @@ import PositionLayout from './rn_widget_flexbox/PositionLayout';
 import ImageView from './rn_widget_image/ImageView';
 import ButtonBasics from './rn_interaction/ButtonBasics';
 import Touchables from './rn_interaction/Touchables';
+import FadeInView from './rn_anim/FadeInView';
 
 
 function App(): JSX.Element {
@@ -59,7 +60,8 @@ function App(): JSX.Element {
     // <PositionLayout />
     // <ImageView />
     // <ButtonBasics />
-    <Touchables />
+    // <Touchables />
+    <FadeInView />
   );
 }
 
