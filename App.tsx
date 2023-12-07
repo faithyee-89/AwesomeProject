@@ -29,6 +29,7 @@ import FlexShrink from './rn_widget_flexbox/FlexShrink';
 import RowGapAndColumnGap from './rn_widget_flexbox/RowGapAndColumnGap';
 import WidthHeightBasics from './rn_widget_flexbox/WidthHeightBasics';
 import PositionLayout from './rn_widget_flexbox/PositionLayout';
+import ImageView from './rn_widget_image/ImageView';
 
 
 function App(): JSX.Element {
@@ -53,7 +54,8 @@ function App(): JSX.Element {
     // <FlexShrink />
     // <RowGapAndColumnGap />
     // <WidthHeightBasics />
-    <PositionLayout />
+    // <PositionLayout />
+    <ImageView />
   );
 }
 
